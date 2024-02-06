@@ -1,0 +1,139 @@
+*{
+    padding: 0;
+    margin: 0;
+  box-sizing: border-box;
+}
+body{
+    display: grid;
+    place-items:center;
+    height: 100vh;
+    background-color: #Fae1dd;
+    /* FFB9CA */
+}
+.container{
+ position: relative;
+
+ cursor: pointer;
+ top: 50px;
+
+ transition:translate 1s  ;
+ transition-delay: 1s;
+ animation: up 3s linear infinite;
+
+
+}
+.container::before{
+    content: "";
+    position: absolute;
+    width: 330px;
+    height: 25px;
+    top: 238px;
+    left: -8px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.3);
+    animation:  size 3s ease infinite
+}
+@keyframes size {
+    0% ,10%{
+       transform: scale(1);
+    }
+    50%{
+      transform: scale(1.1);
+    }
+}
+@keyframes up {
+    0% ,10%{
+        transform: translateY(-10px);
+    }
+    50%{
+        transform: translateY(-40px);
+    }
+}
+.container:hover .card{
+  
+  transform: translateY(-100px);
+    }
+.envalop{
+    position: relative;
+    width: 300px;
+    height: 200px;
+    z-index: 10;
+   background-color: #f08080;
+   display: grid;
+   place-items: center;
+   z-index:1;
+   transition:1s;
+ 
+  
+}
+
+.envalop::before{
+    content: "";
+    position: absolute;
+    width: 212px;
+    height: 212px;
+    background-color: #f79883;
+    transform: rotate(45deg);
+    /* z-index: -1; */
+    top: -107px;
+    left: 44px;
+    border-radius: 30px 4px 0 4px;
+    box-shadow: inset rgba(50, 50, 93, 0.25) 0px 0px 1px 0px, rgba(0, 0, 0, 0.3) 3px 1px 8px 0px inset;
+
+ 
+}
+.front{
+    position: absolute;
+    border-right: 180px solid #ffbbac;;
+    border-top: 98px solid transparent;
+    border-bottom: 102px solid transparent;
+    left: 120px;
+    top: 1px;
+    width: 0;
+    height: 0;
+    z-index: 10;
+}
+
+.front::before{
+    content: "";
+    position: absolute;
+    border-left: 305px solid #fda996;
+    border-top: 208px solid transparent;
+    top: -103px;
+    left: -120px;
+    border-top-left-radius: 3px;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 6px;
+
+}
+.card{
+  
+    position: absolute;
+    background-color: white;
+    width: 275px;
+    height: 180px;
+    display: grid;
+    place-items: center;
+    top: 6px;
+    left: 11px;
+    border-radius: 6px;
+    /* z-index: 7; */
+
+}
+.card::after{
+    position: absolute;
+    content: "";
+    top: 10px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    border: 3px dashed rgba(0,0,0,.4);
+  
+}
+.card .text{
+    font-size: 31px;
+    font-family: "brush script MT",cursive;
+    text-align: center;
+
+}
+
